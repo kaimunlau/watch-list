@@ -1,5 +1,6 @@
 puts "Cleaning database..."
 Movie.destroy_all
+List.destroy_all
 
 puts "Fetching top rated movies..."
 url = "https://tmdb.lewagon.com/movie/top_rated"
@@ -15,5 +16,8 @@ movies.each do |movie|
   )
   puts "Created #{movie["title"]}"
 end
+
+puts "Creating a list..."
+List.create!(name: "Drama")
 
 puts "Finished!"
