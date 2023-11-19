@@ -1,0 +1,12 @@
+<% case type %>
+  <% when 'danger' %>
+    <% btn_class = "font-normal border border-black px-3 py-1 rounded hover:text-red-500 hover:border-red-500 transition duration-300" %>
+  <% when 'add' %>
+    <% btn_class = "font-normal border border-black px-3 py-1 rounded hover:text-green-500 hover:border-green-500 transition duration-300" %>
+  <% else %>
+    <% btn_class = "font-normal border border-black px-3 py-1 rounded hover:text-white hover:border-white transition duration-300" %>
+<% end %>
+
+<div class="<%= btn_class %>">
+  <p><%= btn_text %></p>
+</div>

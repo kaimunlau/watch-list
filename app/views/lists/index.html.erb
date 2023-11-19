@@ -1,9 +1,18 @@
-<div>
-  <h1>My Lists</h1>
-  <ul>
-    <% @lists.each do |list| %>
-      <li><%= link_to list.name, list_path(list)  %></li>
+<div class="flex flex-col">
+  <div class="relative overflow-hidden h-80  brightness-80">
+    <%= image_tag "cinema.jpg", class: "absolute h-full w-full object-cover" %>
+  </div>
+  <%= render "shared/main_container" do %>
+    <%= render "shared/card_container" do %>
+        <% @lists.each do |list| %>
+          <li>
+            <%= link_to list_path(list) do %>
+              <%= render 'shared/card' do %>
+                <%= list.name %>
+              <% end %>
+            <% end %>
+            </li>
+        <% end %>
     <% end %>
-  </ul>
-  <%= link_to "New List", new_list_path %>
+  <% end %>
 </div>
